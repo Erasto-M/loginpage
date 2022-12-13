@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-Widget Textfield(String text, icon,bool isPasswordType){
+Widget Textfield(String text, icon,bool isPasswordType, TextEditingController controller){
   return TextField(
+    controller: controller,
     keyboardType: TextInputType.text,
     obscureText: isPasswordType,
-    showCursor: isPasswordType,
+    //showCursor: isPasswordType,
     decoration: InputDecoration(
       hintText: text,
       hintStyle: TextStyle(
@@ -20,21 +21,16 @@ Widget Showtext(String text){
     text,
     style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 25,
+        fontSize: 15,
         color: Colors.blue),
   );
 }
-Widget button(){
+Widget button(String text,Function() function){
   return Container(
     width: double.infinity,
-    child: RawMaterialButton(
-      fillColor: Colors.green,
-      elevation: 0.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-      ),
-      onPressed: (){},
-      child:Showtext("LOGIN",),
+    child: ElevatedButton(
+      onPressed: function,
+      child:Showtext(text),
     ),
   );
 }

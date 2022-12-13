@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loginpage/screens/sign_in.dart';
+//import 'package:loginpage/screens/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
+import 'package:loginpage/screens/welcome_screen.dart';
 import 'firebase_options.dart';
 void main() async{
   runApp(MyApp());
@@ -34,7 +36,11 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Signin(),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Fruit & car "),
+      ),
+      body: Welcome(),
     );
   }
 }
